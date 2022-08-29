@@ -12,7 +12,7 @@ namespace Asiabill;
 
 use Asiabill\Classes\AsiabillIntegration;
 
-class asiabill
+class Asiabill
 {
     protected $asiabill;
 

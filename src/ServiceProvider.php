@@ -15,14 +15,14 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(asiabill::class, function () {
-            return new asiabill(config('services.asiabill.gateway_no'), config('services.asiabill.sign_key'), config('services.asiabill.model'));
+        $this->app->singleton(Asiabill::class, function () {
+            return new Asiabill(config('services.asiabill.gateway_no'), config('services.asiabill.sign_key'), config('services.asiabill.model'));
         });
-        $this->app->alias(asiabill::class, 'asiabill');
+        $this->app->alias(Asiabill::class, 'asiabill');
     }
 
     public function provides()
     {
-        return [asiabill::class, 'asiabill'];
+        return [Asiabill::class, 'asiabill'];
     }
 }
