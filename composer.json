@@ -2,7 +2,7 @@
     "name": "szwtdl/laravel-asiabill",
     "description": "Asiabill payment sdk, asiabill安信易",
     "type": "library",
-    "license": "Apache License 2.0",
+    "license": "Apache-2.0",
     "require": {
         "asiabill/asiabill_php_sdk": "^1.5",
         "friendsofphp/php-cs-fixer": "^3.9"
