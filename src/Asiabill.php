@@ -7,6 +7,7 @@ declare(strict_types=1);
  * @contact  szpengjian@gmail.com
  * @license  https://github.com/szwtdl/laravel-asiabill/blob/master/LICENSE
  */
+
 namespace Asiabill;
 
 use Asiabill\Classes\AsiabillIntegration;
@@ -22,9 +23,20 @@ class asiabill
     }
 
     /**
+     * 设置日记
+     * @param string $dirname
+     * @return $this
+     */
+    public function logs(string $dirname)
+    {
+        $this->asiabill->startLogger(true, $dirname);
+        return $this;
+    }
+
+    /**
      * 获取session token.
-     * @throws \Exception
      * @return mixed|string
+     * @throws \Exception
      */
     public function sessionToken()
     {
@@ -33,8 +45,8 @@ class asiabill
 
     /**
      * 创建用户.
-     * @throws \Exception
      * @return mixed|string
+     * @throws \Exception
      */
     public function customers(array $data)
     {
@@ -45,8 +57,8 @@ class asiabill
      * 用户列表.
      * @param $page
      * @param $limit
-     * @throws \Exception
      * @return mixed|string
+     * @throws \Exception
      */
     public function customersList($page = 1, $limit = 20)
     {
@@ -60,8 +72,8 @@ class asiabill
 
     /**
      * 发起支付.
-     * @throws \Exception
      * @return mixed|string
+     * @throws \Exception
      */
     public function pay(array $data)
     {
@@ -84,8 +96,8 @@ class asiabill
 
     /**
      * 修改账单信息.
-     * @throws \Exception
      * @return mixed|string
+     * @throws \Exception
      */
     public function updateBill(array $data)
     {
@@ -112,8 +124,8 @@ class asiabill
 
     /**
      * 查询订单.
-     * @throws \Exception
      * @return mixed|string
+     * @throws \Exception
      */
     public function queryTradeNumber(string $tradeNo)
     {
@@ -126,8 +138,8 @@ class asiabill
      * 查询交易列表.
      * @param $start_time
      * @param $end_time
-     * @throws \Exception
      * @return mixed|string
+     * @throws \Exception
      */
     public function queryTradeTime($start_time, $end_time)
     {

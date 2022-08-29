@@ -3,9 +3,7 @@
 use Asiabill\asiabill;
 
 require_once __DIR__ . '/vendor/autoload.php';
-$gateway_no = '12246001';
-$sign_key = '12H4567r';
-$asiabill = new asiabill($gateway_no, $sign_key, 'test'); # test or live
+$asiabill = new asiabill('12246001', '12H4567r', 'test'); # test or live
 
 
 //获取sessiontoken

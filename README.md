@@ -150,7 +150,7 @@ $result = $asiabill->refund([
     'refundReason' => '退款',
     'refundType' => '1',
     'remark' => '',
-    'tradeNo' = '2021092810011380477264'
+    'tradeNo' => '2021092810011380477264'
 ]);
 ```
 ### 查询订单
