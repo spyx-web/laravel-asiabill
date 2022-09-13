@@ -65,7 +65,7 @@ $asiabill = new asiabill('12246001', '12H4567r', 'test'); # test or live
 //查询订单
 //$result = $asiabill->queryTradeNumber('2022082620385662370185');
 // 会员列表
-//$result = $asiabill->customersList(1,100);
+$result = $asiabill->customersList(1,100);
 
 // 确认扣费
 //$result = $asiabill->confirm([
@@ -93,6 +93,8 @@ $asiabill = new asiabill('12246001', '12H4567r', 'test'); # test or live
 //$result = $asiabill->verify();
 
 // 发起查询
-$result = $asiabill->queryTradeTime('2022-08-10T00:00:00','2022-08-12T00:00:00');
+//$result = $asiabill->queryTradeTime('2022-08-10T00:00:00','2022-08-12T00:00:00');
+
+//$result = $asiabill->getCustomer('cus_1569518825626656768');
 echo "<pre>";
 print_r($result);
