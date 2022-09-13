@@ -7,7 +7,6 @@ declare(strict_types=1);
  * @contact  szpengjian@gmail.com
  * @license  https://github.com/szwtdl/laravel-asiabill/blob/master/LICENSE
  */
-
 namespace Asiabill;
 
 use Asiabill\Classes\AsiabillIntegration;
@@ -23,8 +22,7 @@ class Asiabill
     }
 
     /**
-     * 设置日记
-     * @param string $dirname
+     * 设置日记.
      * @return $this
      */
     public function logs(string $dirname)
@@ -35,8 +33,8 @@ class Asiabill
 
     /**
      * 获取session token.
-     * @return mixed|string
      * @throws \Exception
+     * @return mixed|string
      */
     public function sessionToken()
     {
@@ -45,8 +43,8 @@ class Asiabill
 
     /**
      * 创建用户.
-     * @return mixed|string
      * @throws \Exception
+     * @return mixed|string
      */
     public function customers(array $data)
     {
@@ -54,11 +52,21 @@ class Asiabill
     }
 
     /**
+     * 获取客户信息.
+     */
+    public function getCustomer(string $customer_id)
+    {
+        return $this->asiabill->request('customers', ['path' => [
+            'customerId' => $customer_id,
+        ]]);
+    }
+
+    /**
      * 用户列表.
      * @param $page
      * @param $limit
-     * @return mixed|string
      * @throws \Exception
+     * @return mixed|string
      */
     public function customersList($page = 1, $limit = 20)
     {
@@ -72,8 +80,8 @@ class Asiabill
 
     /**
      * 发起支付.
-     * @return mixed|string
      * @throws \Exception
+     * @return mixed|string
      */
     public function pay(array $data)
     {
@@ -96,8 +104,8 @@ class Asiabill
 
     /**
      * 修改账单信息.
-     * @return mixed|string
      * @throws \Exception
+     * @return mixed|string
      */
     public function updateBill(array $data)
     {
@@ -124,8 +132,8 @@ class Asiabill
 
     /**
      * 查询订单.
-     * @return mixed|string
      * @throws \Exception
+     * @return mixed|string
      */
     public function queryTradeNumber(string $tradeNo)
     {
@@ -138,8 +146,8 @@ class Asiabill
      * 查询交易列表.
      * @param $start_time
      * @param $end_time
-     * @return mixed|string
      * @throws \Exception
+     * @return mixed|string
      */
     public function queryTradeTime($start_time, $end_time)
     {
